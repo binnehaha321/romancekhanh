@@ -1,0 +1,11 @@
+@import "src/styles/scss/base.scss";
+
+.milestone {
+    @include grayTheme;
+    
+    
+    &-chart {
+        @include flexRow;
+        justify-content: space-between;
+    }
+}

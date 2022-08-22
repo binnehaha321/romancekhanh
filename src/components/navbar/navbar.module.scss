@@ -1,0 +1,40 @@
+@import "src/styles/scss/base.scss";
+
+.navbar {
+    padding-block: 1rem;
+    transition: $transition;
+
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-brand {
+        display: flex;
+        align-items: center;
+
+        h3 {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+    }
+
+    &-nav {
+        display: flex;
+
+        li {
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+
+            &:hover {
+                @include hoverButton
+            }
+        }
+    }
+}

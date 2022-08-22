@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import { TopSection, BodySection, BottomSection } from "./partials";
+import Footer from "./components/footer/Footer";
+import routes from "./routes";
+
+import AOS from "aos";
 
 function App() {
+  // AOS animation
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <TopSection />
+      <BodySection />
+      <div className="container">
+        <Routes>
+          {routes.map((route, index) => {
+            const Page = route.component;
+            return <Route key={index} path={route.path} element={<Page />} />;
+          })}
+        </Routes>
+      </div>
+      <BottomSection />
+      <Footer />
+    </BrowserRouter>
   );
 }
 

@@ -1,0 +1,114 @@
+@import "src/styles/scss/base.scss";
+
+.footer {
+    padding-block: 1rem;
+
+    @mixin content {
+        line-height: 1.5;
+        opacity: .5;
+
+        display: block;
+    }
+
+    @mixin flexFooter {
+        margin-top: .9rem;
+
+        @include flexCol;
+        gap: .3rem;
+    }
+
+    background-color: $dark-color;
+    @include darkTheme;
+
+    .brand {
+        display: grid;
+        grid-template-columns: 2fr 1.3fr 1.7fr;
+        gap: 2rem;
+
+        &-name {
+            height: 100%;
+
+            @include flexCol;
+
+            .description {
+                @include content;
+                text-align: justify
+            }
+        }
+
+        &-address,
+        &-copyright {
+            height: 100%;
+
+            @include flexFooter;
+
+            .content {
+                @include flexCol;
+                gap: .5rem;
+
+                &-phone {
+                    @include flexCol;
+
+                    a {
+                        line-height: 1.7;
+                    }
+                }
+            }
+
+            .social {
+                @include flexRow;
+                align-items: center;
+                gap: 1.5rem;
+
+                font-size: 1.5rem;
+
+                background-color: $gray-color;
+                border-radius: 100rem;
+
+                padding: .5rem 1rem;
+                margin-top: 1rem;
+                width: fit-content;
+
+                a {
+                    color: $light-color;
+                    opacity: 1;
+
+                    svg {
+                        display: block;
+                        height: 100%;
+                    }
+                }
+
+                .facebook:hover {
+                    transition: $transition;
+                    color: #4267B2;
+                }
+
+                .youtube:hover {
+                    transition: $transition;
+                    color: #FF0000;
+                }
+
+                .tiktok:hover {
+                    transition: $transition;
+                    color: #000000;
+                }
+
+                .zalo:hover {
+                    transition: $transition;
+                    color: #0068FF;
+                }
+
+                .gmail:hover {
+                    transition: $transition;
+                    color: #c71610;
+                }
+            }
+
+            p,
+            a {
+                @include content;
+            }
+        }
+    }
+}

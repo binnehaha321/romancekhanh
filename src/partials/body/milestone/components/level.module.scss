@@ -1,0 +1,62 @@
+@import "src/styles/scss/base.scss";
+
+.level {
+    width: 100%;
+
+    @mixin flexCenter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    $iconWidth: 60px;
+
+    &:last-child {
+        .badge {
+            flex-direction: row-reverse !important;
+        }
+
+        p {
+            text-align: right;
+            margin-right: -15px;
+        }
+    }
+
+    .badge {
+        @include flexCenter;
+
+        &-icon {
+            width: $iconWidth;
+            height: 50px;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+
+            background: $light-color;
+            color: $red-color;
+
+            @include flexCenter;
+
+
+            cursor: pointer;
+            transition: $transition;
+
+            &:hover {
+                transform: scale(1.5);
+
+                background-color: $red-color;
+                color: $light-color;
+            }
+        }
+
+        &-line {
+            height: 2px;
+            width: calc(100% - $iconWidth);
+
+            background-color: $red-color;
+            margin-left: auto;
+        }
+    }
+
+    p {
+        padding-block: 1rem;
+    }
+}

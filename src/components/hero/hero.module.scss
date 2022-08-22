@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap');
+@import "src/styles/scss/base.scss";
+
+.hero {
+    position: relative;
+    
+    img {
+        width: 100%;
+        filter: grayscale(100%);
+        opacity: .15;
+    }
+
+    h1 {
+        font-family: 'Dancing Script', cursive;
+        font-weight: 700;
+        font-size: 9rem;
+        text-align: center;
+        color: $light-color;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 100%;
+    }
+
+    button {
+        font-size: 2rem;
+        color: $light-color;
+
+        border: none;
+        padding: 1rem 2rem;
+        @include hoverButton;
+        
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translate(-50%, -5%);
+
+        &:hover {
+            opacity: $opacity;
+        }
+    }
+}

@@ -1,0 +1,67 @@
+@import "src/styles/scss/base.scss";
+
+// Course image size
+$imgWidth: 100%;
+$imgHeight: 300px;
+
+.course-item {
+    border: 1px solid $light-color;
+    border-radius: $border-radius;
+    @include lightTheme;
+
+    min-width: 400px;
+    transition: $transition;
+
+    
+    .image {
+        pointer-events: none;
+
+        img {
+            width: $imgWidth;
+            height: $imgHeight;
+            object-fit: cover;
+            object-position: left center;
+
+            border-top-right-radius: $border-radius;
+            border-top-left-radius: $border-radius;
+
+            transition: $transition;
+        }
+    }
+
+    .content {
+        padding-inline: 1rem;
+        height: calc(100vh - $imgHeight * 1.5);
+
+        h4 {
+            color: $black-color;
+        }
+
+        &-detail {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            height: calc(100% - 60px);
+
+            .description {
+                margin-bottom: 1rem;
+
+                line-height: 1.5;
+            }
+
+
+            a.see-more {
+                padding: 1rem 1.5rem;
+                background-color: $dark-color;
+
+                align-self: flex-end;
+
+                &:hover {
+                    background-color: $red-color;
+                }
+            }
+        }
+    }
+}

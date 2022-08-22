@@ -1,0 +1,19 @@
+@import "src/styles/scss/base.scss";
+
+.courses {
+    height: 100vh;
+    background-color: $dark-color;
+    @include darkTheme;
+
+    .carousel {
+        overflow: hidden;
+        cursor: grab;
+
+        &-layout {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+    }
+
+}
