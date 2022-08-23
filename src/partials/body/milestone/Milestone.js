@@ -1,6 +1,7 @@
 import React from "react";
 
-import Level from "./components/Level";
+import Level from "./components/level/Level";
+import Detail from "./components/detail/Detail";
 import milestones from "~/api/milestones";
 
 import styles from "./milestone.module.scss";
@@ -20,6 +21,7 @@ function Milestone() {
             />
           ))}
         </div>
+        <Detail />
       </div>
     </div>
   );

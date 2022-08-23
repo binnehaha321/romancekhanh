@@ -161,3 +161,9 @@ h5 {
 @mixin flexRow {
     display: flex;
 }
+
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
