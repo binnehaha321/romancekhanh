@@ -4,11 +4,13 @@
     padding-block: 1rem;
     transition: $transition;
 
+    @include darkTheme;
+
     position: relative;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 2;
+    z-index: 99999;
 
     .container {
         display: flex;
@@ -26,11 +28,14 @@
     }
 
     &-nav {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
 
         li {
             padding: 1rem 1.5rem;
             cursor: pointer;
+
+            text-align: center;
 
             &:hover {
                 @include hoverButton

@@ -2,7 +2,6 @@
 
 .courses {
     height: 100vh;
-    background-color: $dark-color;
     @include darkTheme;
 
     .carousel {

@@ -1,0 +1,86 @@
+@import "src/styles/scss/base.scss";
+
+.contact {
+    @include grayTheme;
+    padding-bottom: 5rem;
+
+    &-form {
+        display: inline-block;
+        width: 50%;
+        height: 500px;
+
+        position: relative;
+        vertical-align: bottom;
+        
+        form {
+            margin-top: -3rem;
+            
+            ul {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                align-items: center;
+
+                li {
+                    width: 90%;
+
+                    &:nth-child(3) {
+                        align-self: flex-start;
+                    }
+
+                    input,
+                    textarea {
+                        display: block;
+                        width: 100%;
+                        box-sizing: border-box;
+
+                        font-family: sans-serif;
+                        color: $light-color;
+                        font-size: 16px;
+                        line-height: 1.4;
+
+                        padding: 1rem;
+
+                        border: none;
+                        border-radius: $border-radius;
+                        outline: none;
+                        background-color: $black-color;
+
+                        resize: none;
+                    }
+                }
+            }
+        }
+
+        button.send {
+            @include hoverButton;
+
+            border: none;
+            outline: none;
+            padding: 1rem 2rem;
+
+            font-size: 15px;
+            color: $light-color;
+
+            transition: $transition;
+
+            &:hover {
+                background-color: $dark-color;
+            }
+        }
+    }
+
+    .map {
+        height: 500px;
+        width: 50%;
+        
+        display: inline-block;
+        
+        .leaflet {
+            border-radius: $border-radius;
+
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

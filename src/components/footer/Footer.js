@@ -21,7 +21,7 @@ function Footer() {
               Lớp nhạc Romance Khánh chuyên dạy: Piano, Organ, Guitar và Vocal
               (thanh nhạc). Với những kinh nghiệm trong biểu diễn nghệ thuật và
               giảng dạy, Romance Khánh sẽ là một lựa chọn phù hợp không chỉ về
-              giá cả mà còn về sự phát triển tâm hồn của những người yêu âm
+              học phí mà còn là nơi phát triển tâm hồn của những người yêu âm
               nhạc.
             </p>
           </div>

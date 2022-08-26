@@ -9,6 +9,7 @@ function Detail() {
     <div className={styles["detail"]}>
       {milestones.map((milestone) => (
         <div
+          data-aos="zoom-out"
           key={milestone.id}
           className={`${styles[`${milestone.level}`]} ${
             styles["detail-block"]

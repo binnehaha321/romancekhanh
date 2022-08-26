@@ -1,0 +1,42 @@
+@import "src/styles/scss/base.scss";
+
+.toggle {
+    input[type="checkbox"] {
+        display: none;
+
+        &:checked ~ label {
+            background-color: $light-color;
+            border-color: $light-color;
+
+            &::after {
+                background-color: $dark-color;
+                transform: translateX(50px);
+            }
+        }
+    }
+
+    label {
+        background-color: $gray-color;
+        border-radius: 50px;
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: all ease-in-out 0.3s;
+        width: 100px;
+        height: 48px;
+
+        &::after {
+            background-color: $light-color;
+            border-radius: 50%;
+            content: ' ';
+            cursor: pointer;
+            display: inline-block;
+            position: absolute;
+            left: 2px;
+            top: 2px;
+            transition: all ease-in-out 0.3s;
+            width: 42px;
+            height: 42px;
+        }
+    }
+}

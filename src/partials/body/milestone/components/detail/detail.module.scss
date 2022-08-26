@@ -1,7 +1,7 @@
 @import "src/styles/scss/base.scss";
 
 .detail {
-    padding-block: 2rem;
+    padding-block: 5rem;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -49,6 +49,11 @@
 
             h4.heading {
                 font-size: 2rem;
+            }
+
+            p {
+                line-height: 1.4;
+                opacity: $opacity;
             }
         }
     }

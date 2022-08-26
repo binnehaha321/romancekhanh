@@ -1,35 +1,39 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import navItems from "./navItems";
+import ToggleTheme from "../toggleTheme/ToggleTheme";
 
 import styles from "./navbar.module.scss";
 
 function Navbar() {
   // Fix navbar when scroll
   const navbar = useRef();
+
   const addStyle = () => {
     return (navbar.current.style.cssText = `
-    position: fixed;
-    background-color: #0F0F11;
+      position: fixed;
+      background-color: #0F0F11;
     `);
   };
-  
+
   const removeStyle = () => {
     return (navbar.current.style.cssText = `
-    position: unset;
-    background-color: unset;
+      position: relative;
+      background-color: #232428;
     `);
   };
-  
-  document.onscroll = () => {
-    const topPagePosition = document.body.getBoundingClientRect().top;
-    if (topPagePosition === 0) {
-      removeStyle();
-    } else {
-      addStyle();
-    }
-  };
+
+  useEffect(() => {
+    document.onscroll = () => {
+      const topPagePosition = document.body.getBoundingClientRect().top;
+      if (topPagePosition === 0) {
+        removeStyle();
+      } else {
+        addStyle();
+      }
+    };
+  }, []);
 
   return (
     <div className={styles["navbar"]} ref={navbar}>
@@ -44,6 +48,7 @@ function Navbar() {
             </Link>
           ))}
         </ul>
+        <ToggleTheme />
       </div>
     </div>
   );

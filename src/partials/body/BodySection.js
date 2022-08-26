@@ -4,10 +4,10 @@ import Milestone from "./milestone/Milestone";
 
 function BodySection() {
   return (
-    <div className="body" style={{ overflow: "hidden" }}>
+    <section className="body" style={{ overflow: "hidden" }}>
       <Courses />
       <Milestone />
-    </div>
+    </section>
   );
 }
 
